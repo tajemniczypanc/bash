@@ -1,0 +1,38 @@
+Wersja 1.1 - ZNISZCZONA RAZEM Z VM DEBIAN
+
+1. Zawierała tablicę, z której co dwie godziny pobierane były raporty dla kilkunastu miejsc na kilku kontynentach. Program sztucznie modyfikował - poprzez ingerencję w pomiar - godzinę wschodu i zachodu słońca, by wyświetlić je w lokalnym czasie.
+
+Wersja 1.2 - ARCHIWALNA
+Funkcjonowała od przesilenia zimowego 2022 do równonocy wiosennej 2023.
+
+1. Wersja sprawdzała pogodę dla dwóch miejscowości. Każda z nich miała ustawiony osobny cronjob z odpowiadającą jej strefą czasową.
+2. Wprowadzony został automatyczny pomiar o wschodzie, południu i zachodzie słońca. 
+
+Wersja 1.3
+Funkcjonuje od równonocy wiosennej 2023
+
+1. Dodana tablica na miejscowości, w których sprawdzana będzie pogoda. Muszą być w jednej strefe czasowej. Potrzebne są osobne pliki i osobne cronjobs dla różnych stref czasowych - kontynuowane jak w wersji 1.2.
+
+2. Miejscowości wrzucone w pętlę for dla łatwiejszego zarządzania całością.
+	2.1)skrypt najpierw sprawdza, czy pliki pomocnicze dotyczące danej miejscowości są aktualne.
+	* Plik pomocniczy zawiera datę oraz czas wschodu i zachodu słońca zapisane w okreslonym formacie
+	2.1.1) jeśli pliki są nieaktualne lub w złym formacie, są aktualizowane według procedury:
+		2.1.2) najpierw dodawana jest dzisiejsza data
+		2.1.3) następnie czas wschodu i zachodu słońca (plus pliki z południem i północą)
+	2.2) Skrypt opiera się na cominutowych cronjobs. Regularnie sprawdza, czy nastąpił czas świtu lub zmierzchu, południa lub północy, kiedy to wykonuje pomiar pogody.
+
+	2.3) rezultat pomiaru dopisywany jest do odpowiedniego pliku danej miejscowości.
+
+3) dodany został pomiar o północy.
+		
+PLANY/POMYSŁY
+
+1. Dodać automatyczne pobieranie ansiweather w przypadku, gdyby program nie był jeszcze zainstalowany.
+2. Dodać automatyczne tworzenie potrzebnych dla skryptu katalogów.
+3. Dodać możliwość wywoływania programu do edytowania, tj. usuwania i dodawania miejscowości do tablicy z wiersza poleceń.
+4. Dodać przeliczaną długość dnia i nocy.
+
+PLANY Z BAZĄ DANYCH
+
+SQL? 
+Przenieść na C, dodać porównywanie wyników dla różnych miejscowości. Stworzyć wykres pokazujący średnie wartości dla okresów.
