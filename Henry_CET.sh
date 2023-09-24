@@ -16,7 +16,7 @@ teraz=$(date +%d/%m/%Y%t%R)
 
 # Określenie miejscowości, w których sprawdzana jest pogoda. Muszą pochodzić z jednej strefy czasowej.
 
-miejsca=( Brussels Berlin Oslo Warszawa )
+miejsca=( Brussels Biberach Berlin Oslo Warszawa )
 
 # Określenie funkcji 1) wywołujących oraz 2) wprowadzających pomiary do raportów, a także 3) plików pomocniczych
 
@@ -57,9 +57,8 @@ then
 
 for a in ${miejsca[@]}
 do
-#touch $pomoce/$a-swit $pomoce/$a-poludnie $pomoce/$a-zmierzch $pomoce/$a-polnoc
-	
-# Pętla najpierw sprawdza w podpętli, czy pliki pomocnicze mają poprawne dane dotyczące czasu raportu na aktualny dzień
+
+# Podpętla sprawdzająca, czy pliki pomocnicze mają poprawne dane dotyczące czasu raportu na aktualny dzień
 
 for b in $a-swit $a-poludnie $a-zmierzch $a-polnoc
 	do
@@ -73,7 +72,7 @@ for b in $a-swit $a-poludnie $a-zmierzch $a-polnoc
 	then
 		pora
 
-# Następnie pętla sprawdza, czy nastał czas raportu w oparciu o poprawne dane
+# wreszcie pętla sprawdza, czy nastał czas raportu w oparciu o poprawne dane i, jeśli tak, wywołuje funkcje to realizującą.
 
 	else
 		odliczanie
