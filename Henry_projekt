@@ -1,6 +1,6 @@
-Wersja 1.1 - ZNISZCZONA RAZEM Z VM DEBIAN
+Wersja 1 - stracona.
 
-1. Zawierała tablicę, z której co dwie godziny pobierane były raporty dla kilkunastu miejsc na kilku kontynentach. Program sztucznie modyfikował - poprzez ingerencję w pomiar - godzinę wschodu i zachodu słońca, by wyświetlić je w lokalnym czasie.
+Zawierała tablicę, z której co dwie godziny pobierane były raporty dla kilkunastu miejsc na kilku kontynentach. Program sztucznie modyfikował - poprzez ingerencję w pomiar - godzinę wschodu i zachodu słońca, by wyświetlić je w lokalnym czasie.
 
 Wersja 1.2 - ARCHIWALNA
 Funkcjonowała od przesilenia zimowego 2022 do równonocy wiosennej 2023.
@@ -8,8 +8,7 @@ Funkcjonowała od przesilenia zimowego 2022 do równonocy wiosennej 2023.
 1. Wersja sprawdzała pogodę dla dwóch miejscowości. Każda z nich miała ustawiony osobny cronjob z odpowiadającą jej strefą czasową.
 2. Wprowadzony został automatyczny pomiar o wschodzie, południu i zachodzie słońca. 
 
-Wersja 1.3
-Funkcjonuje od równonocy wiosennej 2023
+Wersja 1.3 - funkcjonuje od równonocy wiosennej 2023
 
 1. Dodana tablica na miejscowości, w których sprawdzana będzie pogoda. Muszą być w jednej strefe czasowej. Potrzebne są osobne pliki i osobne cronjobs dla różnych stref czasowych - kontynuowane jak w wersji 1.2.
 
