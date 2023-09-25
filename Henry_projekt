@@ -1,3 +1,5 @@
+Henry - skrypt używający programu ansiweather do pomiaru pogody. Jego celem jest sprawdzanie pogody w określonym czasie (lokalny wschód i zachód słońca, południe oraz północ) oraz zapisywanie wyników do dalszej przeróbki.
+
 Wersja 1 - stracona.
 
 Zawierała tablicę, z której co dwie godziny pobierane były raporty dla kilkunastu miejsc na kilku kontynentach. Program sztucznie modyfikował - poprzez ingerencję w pomiar - godzinę wschodu i zachodu słońca, by wyświetlić je w lokalnym czasie.
